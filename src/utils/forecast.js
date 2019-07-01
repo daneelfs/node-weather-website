@@ -6,18 +6,18 @@ const forecast = (latitude, longitude, callback) => {
     // const data = JSON.parse(response.body); before using json: true
     // console.log(response.body.currently);
         if(error)
-            callback("Unable to connect weather", undefined);
+            callback("Unable to connect weather", undefined)
         else if(body.error){
-            callback("Unable to find location", undefined);
+            callback("Unable to find location", undefined)
         }    
         else{
             callback(undefined, {
                 degrees: body.currently.temperature,
                 precipProb : body.currently.precipProbability,
                 forecast: body.currently.summary
-            });
+            })
         }    
-    });
-};
+    })
+}
 
 module.exports = {forecast};
