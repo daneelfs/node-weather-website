@@ -1,10 +1,11 @@
 const path = require("path")
 const express = require("express")
 const hbs = require("hbs")
-const app = express()
-
 const geo = require("./utils/geocode.js")
 const fore = require("./utils/forecast.js")
+
+const app = express()
+const port = process.env.PORT || 3000
 
 //console.log(__dirname)
 //console.log(path.join(__dirname, "../public"))
@@ -47,6 +48,6 @@ app.get("/weather", (req, res) => {
 })
 
 
-app.listen(3000, () => console.log("Server is up on port 3000"))
+app.listen(port, () => console.log("Server is up on port" + port))
 
 
